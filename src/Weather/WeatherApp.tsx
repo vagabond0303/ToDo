@@ -25,8 +25,8 @@ export default function Weather() {
     useEffect(() => {
         ApiWeather().then(response => {
             if (response) {
-                state.country = "INDIA"/*response.location.country*/;
-                state.countryName = "Berhampur"/*response.location.name*/;
+                state.country = response.location.country;
+                state.countryName = response.location.name;
                 state.Time = response.location.localtime;
                 state.temp = response.current.temp_c;
                 state.wind = response.current.wind_kph;
